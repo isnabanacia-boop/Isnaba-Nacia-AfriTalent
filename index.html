@@ -3,10 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+      <!-- ========== HEADER / NAVBAR ========== -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top bg-white">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html"><img src="image/logo.png" width="150" alt="Logo AfriTalent"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="#" class="btn btn-primary ms-3">Rejoindre AfriTalent</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== MAIN ========== -->
+    <main>
+
+        <!-- SECTION HERO - disposition inversée (image à gauche, texte à droite) -->
+        <section class="hero py-5 mt-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-0 order-1">
+                        <img src="image/image1.png" width="650" height="200" class="img-fluid rounded-4 shadow">
+                    </div>
+                    <div class="col-lg-6 order-lg-1 order-0">
+                        <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2">🔥 #1 en Afrique</span>
+                        <h1 class="display-3 fw-bold mb-4">Trouvez le <span class="text-primary">talent tech</span> qu'il vous faut</h1>
+                        <p class="lead text-secondary mb-4">Connectez-vous aux meilleurs freelances tech d'Afrique. Développeurs, designers, experts data.</p>
+                        <div class="d-flex gap-3 mb-5 flex-wrap">
+                            <a href="contact.html" class="btn btn-primary btn-lg">Embaucher un freelance</a>
+                            <a href="freelances.html" class="btn btn-outline-primary btn-lg">Devenir freelance</a>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="stat-number display-5 fw-bold text-primary">3000</div>
+                                <p class="text-secondary">freelances</p>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-number display-5 fw-bold text-primary">950</div>
+                                <p class="text-secondary">entreprises</p>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-number display-5 fw-bold text-primary">15000</div>
+                                <p class="text-secondary">missions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION COMMENT ÇA MARCHE - disposition en 2-2 au lieu de 4 côte à côte -->
+        <section class="how-it-works py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Comment ça marche ?</h2>
+                    <p class="text-secondary">Simple, rapide et efficace</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6">
+                        <div class="d-flex gap-4">
+                            <div class="step-number bg-primary text-white rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">1</div>
+                            <div>
+                                <h3 class="h4">Créez votre profil</h3>
+                                <p class="text-secondary">Inscription gratuite en 2 minutes. Renseignez vos compétences et votre expérience.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex gap-4">
+                            <div class="step-number bg-primary text-white rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">2</div>
+                            <div>
+                                <h3 class="h4">Recevez des missions</h3>
+                                <p class="text-secondary">Les entreprises vous contactent directement ou postulez aux offres.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex gap-4">
+                            <div class="step-number bg-primary text-white rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">3</div>
+                            <div>
+                                <h3 class="h4">Travaillez en toute sécurité</h3>
+                                <p class="text-secondary">Paiements sécurisés, contrat automatique, support 7j/7.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex gap-4">
+                            <div class="step-number bg-primary text-white rounded-circle flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">4</div>
+                            <div>
+                                <h3 class="h4">Soyez payé</h3>
+                                <p class="text-secondary">Recevez vos paiements sous 48h après validation du travail.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CATÉGORIES - disposition modifiée avec rôles inversés -->
+        <section class="categories py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Domaines d'expertise</h2>
+                    <p class="text-secondary">Plus de 3000 freelances qualifiés</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-code-slash fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">Dev Web</h3>
+                            <p class="small text-secondary">342 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-phone fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">Mobile</h3>
+                            <p class="small text-secondary">178 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-palette fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">UI/UX Design</h3>
+                            <p class="small text-secondary">215 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-graph-up fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">Data Science</h3>
+                            <p class="small text-secondary">125 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-megaphone fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">Marketing</h3>
+                            <p class="small text-secondary">198 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-shield-lock fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">Cyber sécurité</h3>
+                            <p class="small text-secondary">87 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-cloud fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">DevOps</h3>
+                            <p class="small text-secondary">112 profils</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="category-card text-center p-3 bg-white rounded-3 shadow-sm">
+                            <i class="bi bi-pencil fs-1 text-primary"></i>
+                            <h3 class="h6 mt-2">Rédaction Tech</h3>
+                            <p class="small text-secondary">94 profils</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION TÉMOIGNAGES - CAROUSEL BOOTSTRAP -->
+<section class="testimonials py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Ils recommandent AfriTalent</h2>
+            <p class="text-secondary">+500 avis 5 étoiles</p>
+        </div>
+
+        <!-- CAROUSEL BOOTSTRAP -->
+        <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicateurs (points en bas) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Témoignage 1"></button>
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" aria-label="Témoignage 2"></button>
+                <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Témoignage 3"></button>
+            </div>
+
+            <!-- Slides du carousel -->
+            <div class="carousel-inner">
+                
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="testimonial-card bg-white p-5 rounded-4 shadow-sm text-center mx-auto" style="max-width: 600px;">
+                                <img src="./image/bernardakafor.jpg" alt="Bernard Okafor" class="rounded-circle mb-3" width="80" height="80">
+                                <h3 class="h5 mb-1">Bernard Okafor</h3>
+                                <p class="text-primary small">CEO, PayAfric</p>
+                                <div class="text-warning mb-3">★★★★★</div>
+                                <p class="fst-italic mb-0">"Nous avons recruté 3 devs React via AfriTalent. Qualité exceptionnelle !"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="testimonial-card bg-white p-5 rounded-4 shadow-sm text-center mx-auto" style="max-width: 600px;">
+                                <img src="./image/fatimazahra.jpg" alt="Fatima Zahra" class="rounded-circle mb-3" width="80" height="80">
+                                <h3 class="h5 mb-1">Fatima Zahra</h3>
+                                <p class="text-primary small">Freelance UI/UX</p>
+                                <div class="text-warning mb-3">★★★★★</div>
+                                <p class="fst-italic mb-0">"J'ai trouvé des missions dès ma première semaine sur la plateforme."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="testimonial-card bg-white p-5 rounded-4 shadow-sm text-center mx-auto" style="max-width: 600px;">
+                                <img src="./image/mamadoudiallo.jpg" alt="Mamadou Diallo" class="rounded-circle mb-3" width="80" height="80">
+                                <h3 class="h5 mb-1">Mamadou Diallo</h3>
+                                <p class="text-primary small">CTO, BloomTech</p>
+                                <div class="text-warning mb-3">★★★★★</div>
+                                <p class="fst-italic mb-0">"Plateforme fiable, support réactif. Nous sommes devenus partenaires."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons précédent / suivant -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+        <!-- SECTION CTA -->
+        <section class="cta-section py-5 bg-primary text-white">
+            <div class="container text-center py-5">
+                <h2 class="display-5 fw-bold mb-3">Prêt à booster votre carrière ou votre entreprise ?</h2>
+                <p class="mb-4">Rejoignez la plus grande communauté tech d'Afrique</p>
+                <a href="#" class="btn btn-light btn-lg text-primary">Inscription gratuite</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-stars fs-2 text-primary"></i>
+                    <h4 class="mt-2">AfriTalent</h4>
+                    <p class="text-secondary">Mettons les talents tech africains en lumière.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Platforme</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Freelances</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Entreprises</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Tarifs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Ressources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact</h5>
+                    <p class="text-secondary">contact@afritalent.com</p>
+                    <p class="text-secondary">+221 33 999 88 77</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-secondary me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary me-2"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-secondary">
+                <p class="text-secondary">&copy; <span id="currentYear">2026</span> AfriTalent</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

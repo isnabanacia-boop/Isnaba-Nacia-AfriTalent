@@ -1,12 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+       <header>
+        <nav class="navbar navbar-expand-lg fixed-top bg-white">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" href="index.html"><img src="image/logo.png" width="150" alt="Logo AfriTalent"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="#" class="btn btn-primary ms-3">Rejoindre AfriTalent</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog-page mt-5 pt-5">
+        <div class="container py-5">
+
+            <!-- EN-TÊTE DU BLOG -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold">Blog & Actualités</h1>
+                <p class="lead text-secondary">Tendances tech, conseils pour freelances et actualités de la communauté</p>
+            </div>
+
+            <!-- ARTICLE À LA UNE -->
+            <div class="featured-article mb-5">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="./image/blog1.jpg" alt="Article à la une" class="img-fluid h-100 w-100" style="object-fit: cover; min-height: 300px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body p-4 p-lg-5">
+                                <span class="badge bg-primary mb-3">À la une</span>
+                                <h2 class="h3 fw-bold">Le freelance tech en Afrique : un marché en pleine explosion</h2>
+                                <p class="text-secondary my-3">Découvrez les tendances du marché du freelance tech en Afrique en 2026. Les secteurs qui recrutent, les compétences les plus recherchées et les perspectives d'avenir.</p>
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="./image/koffiamouzo.jpg" alt="Auteur" class="rounded-circle me-2" width="40" height="40">
+                                    <div>
+                                        <p class="mb-0 small fw-bold">Koffi Amouzou</p>
+                                        <p class="mb-0 small text-secondary">15 min de lecture • 5 mars 2026</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">Lire l'article →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARTICLES RÉCENTS -->
+            <div class="recent-articles mt-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="h3 fw-bold">Articles récents</h2>
+                    <a href="#" class="text-primary text-decoration-none">Voir tous →</a>
+                </div>
+                <div class="row g-4">
+                    <!-- Article 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="./image/blogconseil.jpg" alt="Article 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Conseils</span>
+                                    <span class="badge bg-secondary bg-opacity-10 text-secondary">Freelance</span>
+                                </div>
+                                <h3 class="h5 fw-bold">10 conseils pour réussir votre profil freelance</h3>
+                                <p class="text-secondary small">Comment se démarquer et attirer les meilleures missions ? Nos experts vous livrent leurs secrets.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="small text-secondary"><i class="bi bi-clock"></i> 8 min de lecture</span>
+                                    <a href="#" class="text-primary text-decoration-none">Lire →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="./image/blog2.jpg" alt="Article 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Tech</span>
+                                    <span class="badge bg-secondary bg-opacity-10 text-secondary">IA</span>
+                                </div>
+                                <h3 class="h5 fw-bold">L'IA générative change-t-elle le travail des développeurs ?</h3>
+                                <p class="text-secondary small">Analyse de l'impact de ChatGPT, Copilot et autres outils sur le métier de développeur.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="small text-secondary"><i class="bi bi-clock"></i> 12 min de lecture</span>
+                                    <a href="#" class="text-primary text-decoration-none">Lire →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="./image/blogafrik.jpg" alt="Article 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <div class="d-flex gap-2 mb-2">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">Écosystème</span>
+                                </div>
+                                <h3 class="h5 fw-bold">Les 5 villes africaines où le freelance tech explose</h3>
+                                <p class="text-secondary small">Dakar, Nairobi, Lagos, Le Caire, Casablanca : focus sur ces hubs technologiques en pleine croissance.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="small text-secondary"><i class="bi bi-clock"></i> 10 min de lecture</span>
+                                    <a href="#" class="text-primary text-decoration-none">Lire →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATÉGORIES DU BLOG -->
+            <div class="blog-categories mt-5 py-4 bg-light rounded-4">
+                <div class="text-center mb-4">
+                    <h3 class="h4 fw-bold">Explorer par catégorie</h3>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Tous les articles</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Conseils freelances</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Tendances tech</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Témoignages</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Événements</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Développement</a>
+                    <a href="#" class="btn btn-outline-primary rounded-pill">Design</a>
+                </div>
+            </div>
+
+            <!-- NEWSLETTER -->
+            <div class="newsletter mt-5 p-5 bg-primary text-white rounded-4 text-center">
+                <i class="bi bi-envelope-paper fs-1 mb-3"></i>
+                <h3 class="h4 fw-bold">Ne manquez aucun article</h3>
+                <p class="mb-4">Recevez chaque semaine les meilleurs articles et conseils directement dans votre boîte mail.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Votre adresse email">
+                            <button class="btn btn-light text-primary fw-bold">S'abonner</button>
+                        </div>
+                        <p class="small mt-2 opacity-75">Pas de spam, désinscription à tout moment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <i class="bi bi-stars fs-2 text-primary"></i>
+                    <h4 class="mt-2">AfriTalent</h4>
+                    <p class="text-secondary">Mettons les talents tech africains en lumière.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Platforme</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Freelances</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Entreprises</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Tarifs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Ressources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact</h5>
+                    <p class="text-secondary">isnabanacia@afritalent.com</p>
+                    <p class="text-secondary">+221 33 999 88 77</p>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-secondary">
+                <p class="text-secondary">&copy; <span id="currentYear">2026</span> AfriTalent</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

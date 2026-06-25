@@ -1,50 +1,92 @@
-/* ========== VARIABLES CSS ========== */
+/* ================================================================
+   ========== VARIABLES CSS (déjà fait) ==========
+   ================================================================ */
+
 :root {
     --primary: #0d6efd;
+    --primary-dark: #0b5ed7;
     --secondary: #6c757d;
     --dark: #212529;
     --light: #f8f9fa;
     --white: #ffffff;
+    --success: #198754;
+    --danger: #dc3545;
+    --warning: #ffc107;
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
-    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --bg-body: var(--white);
+    --bg-card: var(--white);
+    --text-body: var(--dark);
+    --text-muted: var(--secondary);
+    --border-color: #e9ecef;
 }
 
-/* ========== RESET & BASE ========== */
+/* ================================================================
+   ========== RESET & BASE ==========
+   ================================================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-body);
-    color: var(--dark);
-    background-color: var(--white);
+    color: var(--text-body);
+    background-color: var(--bg-body);
     line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
 }
 
 a {
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
 }
 
-/* ========== NAVBAR ========== */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ================================================================
+   ========== NAVBAR ==========
+   ================================================================ */
+
 .navbar {
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     padding: 15px 0;
+    background-color: var(--bg-body) !important;
 }
 
 .navbar-nav .nav-link {
     font-weight: 500;
-    color: var(--dark);
+    color: var(--text-body);
+    transition: color var(--transition-fast);
 }
 
 .navbar-nav .nav-link:hover,
@@ -52,41 +94,663 @@ a {
     color: var(--primary);
 }
 
-/* ========== SECTIONS ========== */
-section {
-    padding: 80px 0;
+/* ================================================================
+   ========== SECTION HERO - DISPOSITION ASYMÉTRIQUE ==========
+   ================================================================ */
+
+.hero {
+    padding-top: 100px;
+    overflow: hidden;
+    padding-bottom: 40px;
 }
 
-/* ========== BOUTONS ========== */
-.btn {
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-weight: 500;
+.hero .display-3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.1;
+    font-size: 3.8rem;
 }
 
-/* ========== CARTES ========== */
+.hero .display-3 .text-primary {
+    position: relative;
+    display: inline-block;
+}
+
+/* Effet de soulignement sur le mot "talent tech" */
+.hero .display-3 .text-primary::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: var(--primary);
+    opacity: 0.2;
+    border-radius: 4px;
+    transition: all var(--transition-normal);
+}
+
+.hero .display-3 .text-primary:hover::after {
+    opacity: 0.4;
+}
+
+.hero .badge {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 8px 16px;
+    border-radius: 50px;
+}
+
+/* Wrapper pour l'image asymétrique */
+.hero .hero-image-wrapper {
+    position: relative;
+    padding: 15px;
+}
+
+.hero .hero-image-wrapper img {
+    transform: rotate(-2deg) scale(1.02);
+    transition: transform var(--transition-slow);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero .hero-image-wrapper img:hover {
+    transform: rotate(0deg) scale(1);
+}
+
+/* Décorations Bento autour de l'image */
+.hero .hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    background: var(--primary);
+    opacity: 0.08;
+    border-radius: var(--radius-md);
+    z-index: -1;
+}
+
+.hero .hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    opacity: 0.06;
+    border-radius: var(--radius-md);
+    z-index: -1;
+}
+
+/* Statistiques animées */
+.stat-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    transition: color var(--transition-normal);
+}
+
+/* ================================================================
+   ========== BENTO GRID - COMMENT ÇA MARCHE ==========
+   ================================================================ */
+
+.how-it-works .bento-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+
+.how-it-works .bento-item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.how-it-works .bento-item:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.how-it-works .bento-item:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.how-it-works .bento-item:nth-child(4) {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+
+.how-it-works .bento-item {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.how-it-works .bento-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.how-it-works .bento-item:nth-child(1) {
+    padding: 2.5rem;
+}
+
+.how-it-works .step-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    min-width: 60px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--white);
+    transition: all var(--transition-normal);
+}
+
+.how-it-works .bento-item:hover .step-number {
+    transform: scale(1.1) rotate(-5deg);
+    background: var(--primary-dark);
+}
+
+.how-it-works .bento-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.how-it-works .bento-item p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* ================================================================
+   ========== CATÉGORIES - EFFETS HOVER ==========
+   ================================================================ */
+
+.categories .category-card {
+    background-color: var(--bg-card);
+    color: var(--text-body);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    padding: 2rem 1rem;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
+}
+
+/* Effet de fond qui apparaît au hover */
+.categories .category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    border-radius: var(--radius-md);
+    z-index: 0;
+}
+
+.categories .category-card:hover::before {
+    opacity: 0.06;
+}
+
+/* Contenu au-dessus du fond */
+.categories .category-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Effets hover */
+.categories .category-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+/* Animation de l'icône */
+.categories .category-card i {
+    transition: all var(--transition-normal);
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+.categories .category-card:hover i {
+    transform: scale(1.2) rotate(-8deg);
+    color: var(--primary) !important;
+}
+
+/* Animation du titre */
+.categories .category-card h3 {
+    transition: color var(--transition-normal);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.categories .category-card:hover h3 {
+    color: var(--primary);
+}
+
+/* Animation du compteur */
+.categories .category-card .text-secondary {
+    transition: all var(--transition-normal);
+    font-size: 0.85rem;
+}
+
+.categories .category-card:hover .text-secondary {
+    color: var(--primary) !important;
+}
+
+/* Bordure animée en bas */
+.categories .category-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--primary);
+    transition: all var(--transition-normal);
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.categories .category-card:hover::after {
+    width: 60%;
+    left: 20%;
+}
+
+/* ================================================================
+   ========== TÉMOIGNAGES - CAROUSEL BOOTSTRAP ==========
+   ================================================================ */
+
+.testimonials {
+    background-color: var(--bg-light);
+}
+
+.testimonial-card {
+    background-color: var(--bg-card);
+    color: var(--text-body);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+/* Personnalisation des contrôles du carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 50% 50%;
+    background-color: var(--primary);
+    border-radius: 50%;
+    padding: 20px;
+    transition: all var(--transition-normal);
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1;
+    width: 50px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background-color: transparent;
+    margin: 0 5px;
+    transition: all var(--transition-normal);
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+}
+/* ================================================================
+   ========== CTA SECTION ==========
+   ================================================================ */
+
+.cta-section {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.cta-section .btn-light {
+    transition: all var(--transition-normal);
+}
+
+.cta-section .btn-light:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ================================================================
+   ========== CARTES ==========
+   ================================================================ */
+
 .card {
-    border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    background-color: var(--bg-card);
+    color: var(--text-body);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
 }
 
-/* ========== CATEGORIES ========== */
-.category-card {
-    transition: all 0.3s ease;
-    cursor: pointer;
+/* ================================================================
+   ========== SECTIONS ==========
+   ================================================================ */
+
+section {
+    padding: 80px 0;
 }
 
-.category-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow);
+.bg-light {
+    background-color: var(--light) !important;
 }
 
-/* ========== FOOTER ========== */
+/* ================================================================
+   ========== FOOTER ==========
+   ================================================================ */
+
+footer {
+    background-color: var(--dark) !important;
+}
+
+footer a {
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
 footer a:hover {
     color: var(--primary) !important;
+}
+
+footer .social-icons a {
+    display: inline-block;
+    transition: all var(--transition-fast);
+    font-size: 1.2rem;
+}
+
+footer .social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--primary) !important;
+}
+/* ================================================================
+   ========== BENTO GRID - VALUES (about.html) ==========
+   ================================================================ */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+
+.values-grid .bento-item {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.values-grid .bento-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+/* Valeur 1 - Grande (colonne de gauche sur 2 lignes) */
+.values-grid .bento-large {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding: 2.5rem;
+}
+
+/* Valeur 2 - Milieu haut */
+.values-grid .bento-item:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+/* Valeur 3 - Droite haut */
+.values-grid .bento-item:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+/* Valeur 4 - Large en bas (2 colonnes) */
+.values-grid .bento-wide {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+}
+
+/* ================================================================
+   ========== RESPONSIVE VALUES BENTO ==========
+   ================================================================ */
+
+@media (max-width: 991.98px) {
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .values-grid .bento-large {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .values-grid .bento-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    
+    .values-grid .bento-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .values-grid .bento-wide {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    .values-grid .bento-large,
+    .values-grid .bento-item:nth-child(2),
+    .values-grid .bento-item:nth-child(3),
+    .values-grid .bento-wide {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+}
+/* ================================================================
+   ========== ÉQUIPE - about.html ==========
+   ================================================================ */
+
+.team-card {
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.team-card img {
+    transition: all var(--transition-normal);
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+.team-card .social-links a {
+    transition: all var(--transition-fast);
+    display: inline-block;
+}
+
+.team-card .social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--primary) !important;
+}
+
+/* ================================================================
+   ========== RESPONSIVE - BENTO GRID ==========
+   ================================================================ */
+
+@media (max-width: 991.98px) {
+    .how-it-works .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .how-it-works .bento-item:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .how-it-works .bento-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    
+    .how-it-works .bento-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .how-it-works .bento-item:nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .hero .display-3 {
+        font-size: 2.75rem;
+    }
+    
+    .hero .hero-image-wrapper::before,
+    .hero .hero-image-wrapper::after {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .how-it-works .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    .how-it-works .bento-item:nth-child(1),
+    .how-it-works .bento-item:nth-child(2),
+    .how-it-works .bento-item:nth-child(3),
+    .how-it-works .bento-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+    
+    .how-it-works .bento-item:nth-child(1) {
+        padding: 1.75rem;
+    }
+    
+    .hero .display-3 {
+        font-size: 2.2rem;
+    }
+    
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    
+    .hero .hero-image-wrapper img {
+        transform: none;
+        margin-top: 20px;
+    }
+    
+    .hero .hero-image-wrapper img:hover {
+        transform: none;
+    }
+    
+    section {
+        padding: 50px 0;
+    }
+    
+    .categories .category-card {
+        padding: 1.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 399.98px) {
+    .hero .display-3 {
+        font-size: 1.75rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .how-it-works .bento-item {
+        padding: 1.25rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }

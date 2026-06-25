@@ -75,46 +75,55 @@
             </div>
         </section>
 
-        <!-- SECTION NOS VALEURS - disposition en bento -->
-        <section class="values py-5 bg-light">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold">Nos valeurs</h2>
-                    <p class="text-secondary">Ce qui guide nos actions au quotidien</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                            <i class="bi bi-globe fs-1 text-primary"></i>
-                            <h3 class="h4 mt-3">Panafricanisme</h3>
-                            <p class="text-secondary">Nous croyons en une Afrique unie où les talents circulent librement entre les pays.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                            <i class="bi bi-shield-check fs-1 text-primary"></i>
-                            <h3 class="h4 mt-3">Confiance</h3>
-                            <p class="text-secondary">La transparence et la fiabilité sont au cœur de chaque mise en relation.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                            <i class="bi bi-robot fs-1 text-primary"></i>
-                            <h3 class="h4 mt-3">Innovation</h3>
-                            <p class="text-secondary">Nous utilisons les dernières technologies pour améliorer l'expérience utilisateur.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                            <i class="bi bi-heart fs-1 text-primary"></i>
-                            <h3 class="h4 mt-3">Impact social</h3>
-                            <p class="text-secondary">Notre mission est de créer des opportunités économiques pour la jeunesse africaine.</p>
-                        </div>
-                    </div>
+      <!-- SECTION NOS VALEURS - BENTO GRID -->
+<section class="values py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2">Nos valeurs</span>
+            <h2 class="display-5 fw-bold mt-2">Ce qui nous guide</h2>
+            <p class="text-secondary">Des principes forts pour une communauté solide</p>
+        </div>
+
+        <!-- BENTO GRID -->
+        <div class="bento-grid values-grid">
+            <!-- Valeur 1 - Grande -->
+            <div class="bento-item bento-large">
+                <div>
+                    <i class="bi bi-globe fs-1 text-primary"></i>
+                    <h3 class="h4 mt-3">Panafricanisme</h3>
+                    <p class="text-secondary">Nous croyons en une Afrique unie où les talents circulent librement entre les pays. Notre communauté s'étend sur 25 pays africains.</p>
                 </div>
             </div>
-        </section>
 
+            <!-- Valeur 2 -->
+            <div class="bento-item">
+                <div>
+                    <i class="bi bi-shield-check fs-1 text-primary"></i>
+                    <h3 class="h4 mt-3">Confiance</h3>
+                    <p class="text-secondary">La transparence et la fiabilité sont au cœur de chaque mise en relation.</p>
+                </div>
+            </div>
+
+            <!-- Valeur 3 -->
+            <div class="bento-item">
+                <div>
+                    <i class="bi bi-robot fs-1 text-primary"></i>
+                    <h3 class="h4 mt-3">Innovation</h3>
+                    <p class="text-secondary">Nous utilisons les dernières technologies pour améliorer l'expérience utilisateur.</p>
+                </div>
+            </div>
+
+            <!-- Valeur 4 - Large en bas -->
+            <div class="bento-item bento-wide">
+                <div>
+                    <i class="bi bi-heart fs-1 text-primary"></i>
+                    <h3 class="h4 mt-3">Impact social</h3>
+                    <p class="text-secondary">Notre mission est de créer des opportunités économiques pour la jeunesse africaine. Chaque mission contribue à l'écosystème tech du continent.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- SECTION L'ÉQUIPE - disposition grille 2x2 -->
         <section class="team py-5">
             <div class="container">
@@ -124,7 +133,7 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3">
-                        <div class="team-card text-center">
+                        <div class="card team-card text-center p-3 h-100">
                             <img src="./image/koffiamouzo.jpg" alt="Portrait de Koffi" class="rounded-circle mb-3" width="150" height="150">
                             <h3 class="h5">Koffi Amouzou</h3>
                             <p class="text-primary">CEO & Fondateur</p>
@@ -136,7 +145,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <div class="team-card text-center">
+                        <div class="card team-card text-center p-3 h-100">
                             <img src="./image/aichabenali.jpg" alt="Portrait de Aïcha" class="rounded-circle mb-3" width="150" height="150">
                             <h3 class="h5">Aïcha Benali</h3>
                             <p class="text-primary">CTO</p>
@@ -148,7 +157,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <div class="team-card text-center">
+                        <div class="card team-card text-center p-3 h-100">
                             <img src="./image/souleymanekeyta.jpg" alt="Portrait de Souleymane" class="rounded-circle mb-3" width="150" height="150">
                             <h3 class="h5">Souleymane Keita</h3>
                             <p class="text-primary">CMO</p>
@@ -160,7 +169,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
-                        <div class="team-card text-center">
+                        <div class="card team-card text-center p-3 h-100">
                             <img src="./image/fatoudieng.jpg" alt="Portrait de Fatou" class="rounded-circle mb-3" width="150" height="150">
                             <h3 class="h5">Fatou Dieng</h3>
                             <p class="text-primary">Head of Community</p>

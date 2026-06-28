@@ -111,3 +111,140 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+/* ================================================================
+   ========== COMMIT 7 - COMPTEURS ANIMÉS & FADE-IN ==========
+   ================================================================ */
+
+// ===== 1. COMPTEURS ANIMÉS AU SCROLL =====
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Fonction pour animer un compteur
+    function animateCounter(element, target, duration) {
+        const start = 0;
+        const startTime = performance.now();
+        const isFloat = target % 1 !== 0;
+        
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function pour un effet plus naturel
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = start + (target - start) * easeOutQuart;
+            
+            if (isFloat) {
+                element.textContent = current.toFixed(1);
+            } else {
+                element.textContent = Math.round(current);
+            }
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                if (isFloat) {
+                    element.textContent = target.toFixed(1);
+                } else {
+                    element.textContent = target;
+                }
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    }
+    
+    // Fonction pour extraire la valeur numérique d'un élément
+    function getNumericValue(element) {
+        const text = element.textContent.trim();
+        // Enlever les espaces, les symboles +, %, etc.
+        const cleanText = text.replace(/[+\s%]/g, '');
+        return parseFloat(cleanText) || 0;
+    }
+    
+    // Fonction pour extraire le suffixe (+, %, etc.)
+    function getSuffix(element) {
+        const text = element.textContent.trim();
+        const match = text.match(/[+\s%]/g);
+        return match ? match.join('') : '';
+    }
+    
+    // Observer les compteurs
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    if (statNumbers.length > 0) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+        
+        // Stocker les valeurs originales
+        const statData = [];
+        statNumbers.forEach(stat => {
+            const originalText = stat.textContent.trim();
+            const targetValue = getNumericValue(stat);
+            const suffix = getSuffix(stat);
+            statData.push({
+                element: stat,
+                target: targetValue,
+                suffix: suffix,
+                originalText: originalText,
+                animated: false
+            });
+        });
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statItem = statData.find(item => item.element === entry.target);
+                    if (statItem && !statItem.animated) {
+                        statItem.animated = true;
+                        // Déterminer la durée selon la valeur
+                        const duration = Math.min(2000, 500 + statItem.target * 2);
+                        // Ajouter le suffixe après l'animation
+                        animateCounter(statItem.element, statItem.target, duration);
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        statNumbers.forEach(stat => {
+            observer.observe(stat);
+        });
+    }
+    
+    // ===== 2. ANIMATIONS FADE-IN AU SCROLL =====
+    const sections = document.querySelectorAll('section, .hero, .featured-article, .recent-articles, .faq-section, .newsletter');
+    
+    if (sections.length > 0) {
+        // Ajouter la classe fade-section à toutes les sections
+        sections.forEach((section, index) => {
+            section.classList.add('fade-section');
+            // Ajouter un délai progressif pour un effet cascade
+            const delay = Math.min(index % 4, 3);
+            if (delay > 0) {
+                section.classList.add('delay-' + delay);
+            }
+        });
+        
+        const fadeOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+        
+        const fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Une fois visible, on peut arrêter de l'observer
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, fadeOptions);
+        
+        sections.forEach(section => {
+            fadeObserver.observe(section);
+        });
+    }
+    
+}); 

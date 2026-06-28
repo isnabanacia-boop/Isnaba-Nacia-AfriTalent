@@ -1160,3 +1160,349 @@ footer .social-icons a:hover {
         margin-left: 0 !important;
     }
 }
+/* ================================================================
+   ========== COMMIT 6 - DARK MODE & NAVBAR DYNAMIQUE ==========
+   ================================================================ */
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    --bg-body: #1a1a2e;
+    --bg-card: #16213e;
+    --text-body: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #2a2a4a;
+    --light: #1a1a2e;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #16213e !important;
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar .nav-link:hover,
+body.dark-mode .navbar .nav-link.active {
+    color: var(--primary);
+}
+
+body.dark-mode .card,
+body.dark-mode .testimonial-card,
+body.dark-mode .category-card,
+body.dark-mode .bento-item,
+body.dark-mode .team-card {
+    background-color: #16213e;
+    border-color: #2a2a4a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1a1a2e !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #a0a0a0 !important;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #16213e;
+    color: #e0e0e0;
+    border-color: #2a2a4a;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    background-color: #16213e;
+    color: #e0e0e0;
+    border-color: var(--primary);
+}
+
+body.dark-mode .form-label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-item {
+    background-color: #16213e;
+    border-color: #2a2a4a;
+}
+
+body.dark-mode .accordion-button {
+    background-color: #16213e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-body {
+    background-color: #16213e;
+    color: #a0a0a0;
+}
+
+body.dark-mode .hero .badge.bg-primary {
+    background-color: rgba(13, 110, 253, 0.2) !important;
+    color: #4d8cf7 !important;
+}
+
+body.dark-mode .how-it-works .step-number {
+    background: var(--primary);
+    color: #fff;
+}
+
+body.dark-mode .border-secondary {
+    border-color: #2a2a4a !important;
+}
+
+body.dark-mode footer {
+    background-color: #0d0d1a !important;
+}
+
+body.dark-mode .cta-section {
+    background: linear-gradient(135deg, #0d6efd, #0a4b8a);
+}
+
+/* ===== NAVBAR DYNAMIQUE AU SCROLL ===== */
+.navbar.scrolled {
+    background-color: var(--bg-body) !important;
+    box-shadow: var(--shadow-md);
+    padding: 8px 0;
+}
+
+body.dark-mode .navbar.scrolled {
+    background-color: #16213e !important;
+}
+
+/* ===== BOUTON RETOUR EN HAUT ===== */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-dark);
+}
+
+body.dark-mode #backToTop {
+    background-color: #0d6efd;
+}
+
+body.dark-mode #backToTop:hover {
+    background-color: #0b5ed7;
+}
+/* ================================================================
+   ========== COMMIT 6 - DARK MODE & NAVBAR DYNAMIQUE ==========
+   ================================================================ */
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    --bg-body: #1a1a2e;
+    --bg-card: #16213e;
+    --text-body: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #2a2a4a;
+    --light: #1a1a2e;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #16213e !important;
+}
+
+body.dark-mode .navbar .nav-link {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar .nav-link:hover,
+body.dark-mode .navbar .nav-link.active {
+    color: var(--primary);
+}
+
+body.dark-mode .card,
+body.dark-mode .testimonial-card,
+body.dark-mode .category-card,
+body.dark-mode .bento-item,
+body.dark-mode .team-card {
+    background-color: #16213e;
+    border-color: #2a2a4a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1a1a2e !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #a0a0a0 !important;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #16213e;
+    color: #e0e0e0;
+    border-color: #2a2a4a;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    background-color: #16213e;
+    color: #e0e0e0;
+    border-color: var(--primary);
+}
+
+body.dark-mode .form-label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-item {
+    background-color: #16213e;
+    border-color: #2a2a4a;
+}
+
+body.dark-mode .accordion-button {
+    background-color: #16213e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-body {
+    background-color: #16213e;
+    color: #a0a0a0;
+}
+
+body.dark-mode .hero .badge.bg-primary {
+    background-color: rgba(13, 110, 253, 0.25) !important;
+    color: #6ea8fe !important;
+}
+
+body.dark-mode .how-it-works .step-number {
+    background: var(--primary);
+    color: #fff;
+}
+
+body.dark-mode .border-secondary {
+    border-color: #2a2a4a !important;
+}
+
+body.dark-mode footer {
+    background-color: #0d0d1a !important;
+}
+
+body.dark-mode .cta-section {
+    background: linear-gradient(135deg, #0d6efd, #0a4b8a);
+}
+
+/* Dark Mode - Tarifs */
+body.dark-mode .tarifs-page .card {
+    background-color: #16213e;
+    border-color: #2a2a4a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .tarifs-page .card .text-primary {
+    color: #6ea8fe !important;
+}
+
+body.dark-mode .tarifs-page .card .border-primary {
+    border-color: #0d6efd !important;
+}
+
+body.dark-mode .tarifs-page .card .badge.bg-primary {
+    background-color: #0d6efd !important;
+}
+
+/* Dark Mode - Témoignages */
+body.dark-mode .testimonial-card .text-primary {
+    color: #6ea8fe !important;
+}
+
+body.dark-mode .testimonial-card .text-warning {
+    color: #ffc107 !important;
+}
+
+/* ===== NAVBAR DYNAMIQUE AU SCROLL ===== */
+.navbar.scrolled {
+    background-color: var(--bg-body) !important;
+    box-shadow: var(--shadow-md);
+    padding: 8px 0;
+    transition: all var(--transition-normal);
+}
+
+body.dark-mode .navbar.scrolled {
+    background-color: #16213e !important;
+}
+
+/* ===== BOUTON RETOUR EN HAUT ===== */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    background-color: var(--primary-dark);
+}
+
+body.dark-mode #backToTop {
+    background-color: #0d6efd;
+}
+
+body.dark-mode #backToTop:hover {
+    background-color: #0b5ed7;
+}
+

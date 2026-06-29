@@ -248,3 +248,207 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 }); 
+/* ================================================================
+   ========== COMMIT 8 - FILTRAGE & VALIDATION FORMULAIRE ==========
+   ================================================================ */
+
+// ===== 1. FILTRAGE DYNAMIQUE DES FREELANCES =====
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Vérifier si on est sur la page freelances
+    const freelanceCards = document.querySelectorAll('.freelance-card');
+    const filterButtons = document.querySelectorAll('.filters .btn');
+    
+    if (freelanceCards.length > 0 && filterButtons.length > 0) {
+        
+        // Ajouter l'événement click sur chaque bouton de filtre
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Enlever la classe active de tous les boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Ajouter la classe active au bouton cliqué
+                this.classList.add('active');
+                
+                // Récupérer la catégorie sélectionnée
+                const category = this.getAttribute('data-category');
+                
+                // Filtrer les cartes
+                freelanceCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'block';
+                        // Ajouter une animation d'apparition
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+});
+
+// ===== 2. VALIDATION DU FORMULAIRE DE CONTACT =====
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        
+        // Références des champs
+        const nomInput = document.getElementById('nom');
+        const emailInput = document.getElementById('email');
+        const sujetSelect = document.getElementById('sujet');
+        const messageTextarea = document.getElementById('message');
+        const formSuccess = document.getElementById('formSuccess');
+        
+        // Fonction pour afficher une erreur
+        function showError(input, message) {
+            const errorDiv = input.parentElement.querySelector('.error-message');
+            if (errorDiv) {
+                errorDiv.textContent = message;
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+            }
+        }
+        
+        // Fonction pour effacer l'erreur
+        function clearError(input) {
+            const errorDiv = input.parentElement.querySelector('.error-message');
+            if (errorDiv) {
+                errorDiv.textContent = '';
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+            }
+        }
+        
+        // Fonction pour valider un champ
+        function validateField(input) {
+            const value = input.value.trim();
+            
+            // Validation du nom
+            if (input.id === 'nom') {
+                if (value.length < 2) {
+                    showError(input, 'Le nom doit contenir au moins 2 caractères');
+                    return false;
+                } else {
+                    clearError(input);
+                    return true;
+                }
+            }
+            
+            // Validation de l'email
+            if (input.id === 'email') {
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(value)) {
+                    showError(input, 'Veuillez entrer une adresse email valide');
+                    return false;
+                } else {
+                    clearError(input);
+                    return true;
+                }
+            }
+            
+            // Validation du sujet
+            if (input.id === 'sujet') {
+                if (value === '') {
+                    showError(input, 'Veuillez sélectionner un sujet');
+                    return false;
+                } else {
+                    clearError(input);
+                    return true;
+                }
+            }
+            
+            // Validation du message
+            if (input.id === 'message') {
+                if (value.length < 20) {
+                    showError(input, 'Le message doit contenir au moins 20 caractères');
+                    return false;
+                } else {
+                    clearError(input);
+                    return true;
+                }
+            }
+            
+            return true;
+        }
+        
+        // Ajouter les événements de validation en temps réel
+        [nomInput, emailInput, sujetSelect, messageTextarea].forEach(input => {
+            if (input) {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('is-invalid')) {
+                        validateField(this);
+                    }
+                });
+            }
+        });
+        
+        // Soumission du formulaire
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Valider tous les champs
+            const isNomValid = validateField(nomInput);
+            const isEmailValid = validateField(emailInput);
+            const isSujetValid = validateField(sujetSelect);
+            const isMessageValid = validateField(messageTextarea);
+            
+            // Vérifier si tous les champs sont valides
+            if (isNomValid && isEmailValid && isSujetValid && isMessageValid) {
+                // Afficher le message de succès
+                formSuccess.classList.remove('d-none');
+                formSuccess.textContent = '✅ Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.';
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                // Enlever les classes de validation
+                [nomInput, emailInput, sujetSelect, messageTextarea].forEach(input => {
+                    if (input) {
+                        input.classList.remove('is-valid', 'is-invalid');
+                        const errorDiv = input.parentElement.querySelector('.error-message');
+                        if (errorDiv) {
+                            errorDiv.textContent = '';
+                        }
+                    }
+                });
+                
+                // Masquer le message après 5 secondes
+                setTimeout(function() {
+                    formSuccess.classList.add('d-none');
+                }, 5000);
+                
+            } else {
+                // Faire défiler jusqu'au premier champ invalide
+                const firstInvalid = document.querySelector('.is-invalid');
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                    firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    }
+});
+
+// ===== ANIMATION FADE-IN POUR LES CARTES FILTRÉES =====
+// Ajouter l'animation CSS si elle n'existe pas
+if (!document.getElementById('fadeInStyle')) {
+    const style = document.createElement('style');
+    style.id = 'fadeInStyle';
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+

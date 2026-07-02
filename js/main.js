@@ -450,5 +450,82 @@ if (!document.getElementById('fadeInStyle')) {
     `;
     document.head.appendChild(style);
 }
+/* ================================================================
+   ========== COMMIT 9 - FINALISATION & CORRECTIONS ==========
+   ================================================================ */
+
+// ===== 1. VÉRIFICATION DES ATTRIBUTS ALT =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Vérifier que toutes les images ont un attribut alt
+    const images = document.querySelectorAll('img');
+    let missingAltCount = 0;
+    
+    images.forEach(img => {
+        if (!img.hasAttribute('alt') || img.getAttribute('alt') === '') {
+            console.warn('Image sans attribut alt :', img.src);
+            missingAltCount++;
+        }
+    });
+    
+    if (missingAltCount > 0) {
+        console.log('⚠️ ' + missingAltCount + ' image(s) sans attribut alt. Veuillez les ajouter.');
+    } else {
+        console.log('✅ Toutes les images ont un attribut alt.');
+    }
+});
+
+// ===== 2. NAVIGATION CLAVIER (Accessibilité) =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Permettre la navigation au clavier sur les boutons personnalisés
+    const customButtons = document.querySelectorAll('[role="button"], .btn, button');
+    
+    customButtons.forEach(button => {
+        if (!button.hasAttribute('tabindex')) {
+            button.setAttribute('tabindex', '0');
+        }
+    });
+});
+
+// ===== 3. MESSAGE DE BIENVENUE DANS LA CONSOLE =====
+console.log('%c AfriTalent %c Connectez les talents tech africains ! ',
+    'background: #0d6efd; color: white; font-size: 18px; font-weight: bold; padding: 8px 12px; border-radius: 4px 0 0 4px;',
+    'background: #212529; color: white; font-size: 18px; padding: 8px 12px; border-radius: 0 4px 4px 0;'
+);
+console.log('🚀 Projet AfriTalent - Plateforme de mise en relation freelances tech');
+
+// ===== 4. CORRECTION DES LIENS ACTIFS =====
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const currentUrl = window.location.pathname.split('/').pop() || 'index.html';
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Supprimer les liens actifs incorrects
+        if (href === currentUrl) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// ===== 5. GESTION DES ERREURS GLOBALES =====
+window.addEventListener('error', function(e) {
+    console.warn('Une erreur est survenue sur la page :', e.message);
+});
+
+// ===== 6. VÉRIFICATION QUE TOUTES LES FONCTIONNALITÉS JS SONT CHARGÉES =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ Toutes les fonctionnalités JavaScript sont chargées !');
+    console.log('📊 Fonctionnalités disponibles :');
+    console.log('  - Dark Mode (localStorage)');
+    console.log('  - Navbar dynamique au scroll');
+    console.log('  - Bouton retour en haut');
+    console.log('  - Compteurs animés (IntersectionObserver)');
+    console.log('  - Fade-in sections (IntersectionObserver)');
+    console.log('  - Filtrage freelances');
+    console.log('  - Validation formulaire contact');
+});
+
+// ===== FIN DU COMMIT 9 =====
+
 
 

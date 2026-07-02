@@ -1397,6 +1397,238 @@ body.dark-mode #backToTop:hover {
 body.dark-mode .stat-number {
     color: var(--primary) !important;
 }
+/* ================================================================
+   ========== COMMIT 9 - FINALISATION & CORRECTIONS ==========
+   ================================================================ */
+
+/* ===== CORRECTIONS RESPONSIVE SUPPLÉMENTAIRES ===== */
+
+/* Amélioration du padding sur mobile pour toutes les sections */
+@media (max-width: 767.98px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Correction des cartes sur mobile */
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    /* Correction des marges sur mobile */
+    .row.g-4 {
+        --bs-gutter-y: 1rem;
+    }
+    
+    /* Correction des textes sur mobile */
+    .lead {
+        font-size: 1rem;
+    }
+    
+    /* Correction des badges sur mobile */
+    .badge {
+        font-size: 0.75rem;
+    }
+    
+    /* Correction des boutons sur mobile */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-lg {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* Correction des images sur tablette */
+@media (max-width: 991.98px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ===== AMÉLIORATION ACCESSIBILITÉ ===== */
+
+/* Focus visible pour la navigation clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Contraste suffisant pour les textes */
+.text-secondary {
+    color: #495057 !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #adb5bd !important;
+}
+
+/* ===== CORRECTIONS BOUTON RETOUR EN HAUT ===== */
+#backToTop {
+    z-index: 9999;
+}
+
+/* ===== CORRECTIONS DARK MODE - FORMULAIRES ===== */
+body.dark-mode .form-control::placeholder {
+    color: #6c757d;
+}
+
+body.dark-mode .form-control.is-valid {
+    border-color: #198754;
+    background-color: #1a2e1a;
+}
+
+body.dark-mode .form-control.is-invalid {
+    border-color: #dc3545;
+    background-color: #2e1a1a;
+}
+
+body.dark-mode .form-select.is-valid {
+    border-color: #198754;
+}
+
+body.dark-mode .form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+/* ===== CORRECTIONS ANIMATIONS ===== */
+
+/* Empêcher le débordement horizontal */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Correction des transitions pour éviter les sauts */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== CORRECTIONS FOOTER ===== */
+
+/* Footer bien centré sur mobile */
+@media (max-width: 767.98px) {
+    footer .row {
+        text-align: center;
+    }
+    
+    footer .social-icons {
+        justify-content: center;
+    }
+    
+    footer ul {
+        padding-left: 0;
+        list-style: none;
+    }
+}
+
+/* ===== CORRECTIONS HERO ===== */
+
+/* Éviter le débordement de l'image hero */
+.hero .hero-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Correction des statistiques sur mobile */
+@media (max-width: 575.98px) {
+    .hero .row.text-center .col-4 {
+        padding: 0 0.5rem;
+    }
+    
+    .hero .stat-number {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ===== CORRECTIONS CARTES CATÉGORIES ===== */
+
+/* Assurer que les cartes catégories ont une hauteur égale */
+.categories .category-card {
+    height: 100%;
+    min-height: 120px;
+}
+
+/* ===== CORRECTIONS TÉMOIGNAGES ===== */
+
+/* Témoignages bien centrés sur mobile */
+@media (max-width: 767.98px) {
+    .testimonial-card {
+        padding: 1.5rem !important;
+    }
+    
+    .testimonial-card img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ===== COMMUNAUTÉ : SECTION CHIFFRES CLÉS ===== */
+
+/* Correction des statistiques about.html */
+.stats-section .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+@media (max-width: 767.98px) {
+    .stats-section .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .stats-section .col-md-3 {
+        margin-bottom: 2rem;
+    }
+}
+
+/* ===== FINAL - RESPONSIVE COMPLET ===== */
+
+/* Taille des textes sur très petit mobile */
+@media (max-width: 399.98px) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1, .display-3 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2, .display-4 {
+        font-size: 1.3rem !important;
+    }
+    
+    h3, .display-5 {
+        font-size: 1.1rem !important;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Correction des animations pour les sections */
+.fade-section {
+    will-change: transform, opacity;
+}
+
+/* Correction des compteurs animés */
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ===== FIN DU COMMIT 9 ===== */
 
 
 

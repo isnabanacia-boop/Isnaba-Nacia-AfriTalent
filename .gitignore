@@ -1,3 +1,23 @@
 .DS_Store 
 Thumbs.db 
 node_modules/
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporaires
+*.tmp
+*.log
+*.cache
+
+# Dossier node_modules
+node_modules/
+
+# Fichiers de backup
+*.backup
+*.bak
